@@ -15,6 +15,12 @@ public class Candidato {
 	private Long Id;
 	private String Tipo;
 	private String Nome;
+	
+	@ManyToOne
+	@JoinColumn(name="MunicipioId")
+	private Municipio Municipio;	
+	
+	
 	public String getNome() {
 		return Nome;
 	}
@@ -43,10 +49,7 @@ public class Candidato {
 	public void setTipo(String tipo) { 
 		Tipo = tipo;
     }
-	
-	@ManyToOne
-	@JoinColumn(name="MunicipioId")
-	private Municipio Municipio;
+
 	
     
 }

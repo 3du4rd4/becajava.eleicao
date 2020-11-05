@@ -15,6 +15,18 @@ public class Voto {
 	private Long Id;
 	private int Codigo;
 	
+	@ManyToOne
+	@JoinColumn(name="CandidatoId")
+	private Candidato Candidato;
+	
+	@ManyToOne
+	@JoinColumn(name="EleitorId")
+	private Eleitor Eleitor;
+	
+	@ManyToOne
+	@JoinColumn(name="ZonaId")
+	private Zona Zona;
+	
 	public int getCodigo() {
 		return Codigo;
 	}
@@ -28,16 +40,6 @@ public class Voto {
 		Id = id;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name="CandidatoId")
-	private Candidato Candidato;
 	
-	@ManyToOne
-	@JoinColumn(name="EleitorId")
-	private Eleitor Eleitor;
-	
-	@ManyToOne
-	@JoinColumn(name="ZonaId")
-	private Zona Zona;
 
 }
